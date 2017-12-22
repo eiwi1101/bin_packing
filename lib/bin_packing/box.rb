@@ -8,6 +8,7 @@ module BinPacking
       @x = 0
       @y = 0
       @packed = false
+      @rotated = false
     end
 
     def area
@@ -16,6 +17,11 @@ module BinPacking
 
     def rotate
       @width, @height = [@height, @width]
+      @rotated = !@rotated
+    end
+    
+    def rotated?
+      @rotated
     end
 
     def packed?
